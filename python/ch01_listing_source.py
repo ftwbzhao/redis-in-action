@@ -192,8 +192,8 @@ def post_article(conn, user, title, link):
         'votes': 1,                             #C
     })                                          #C
 
-    conn.zadd('score:', {article: now + VOTE_SCORE})#D
-    conn.zadd('time:', {article: now})              #D
+    conn.zadd('score:', {article: VOTE_SCORE})  #D
+    conn.zadd('time:', {article: now})          #D
 
     return article_id
 # <end id="post-article-code"/>
